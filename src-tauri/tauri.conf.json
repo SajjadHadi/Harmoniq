@@ -12,13 +12,16 @@
   "app": {
     "windows": [
       {
-        "title": "harmoniq",
+        "title": "Harmoniq",
         "width": 800,
         "height": 600
       }
     ],
     "security": {
-      "csp": null
+      "csp": null,
+      "assetProtocol": {
+        "enable": true
+      }
     }
   },
   "bundle": {
