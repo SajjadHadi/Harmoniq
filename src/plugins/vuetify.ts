@@ -12,7 +12,7 @@ const modernDark = {
         primary: '#2d2e37',
         secondary: '#3c3abe',
         accent: '#c4c4c4',
-        background: '#fcfcff',
+        background: '#000000',
         error: '#E52020',
         success: '#A0C878',
         info: '#6F38C5',
