@@ -34,9 +34,7 @@ export const useLibraryStore = defineStore('library', {
                     const audioPath = convertFileSrc(file as string);
                     const fileName = await basename(file as string);
                     const title = fileName.split('.').shift() || 'Unknown Title';
-                    const newTrack = this.createTrack(audioPath, title);
-                    this.currentTrack = newTrack;
-                    console.log(this.tracks);
+                    this.currentTrack = this.createTrack(audioPath, title);
                 }
             } catch (error) {
                 console.error('Error opening track:', error);
