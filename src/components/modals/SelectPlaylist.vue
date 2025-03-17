@@ -22,7 +22,7 @@ const selectedPlaylist = ref('');
 </script>
 
 <template>
-  <div class="pa-4 text-center">
+  <div class="pa-4 text-center" style="margin-top: -32px">
     <v-dialog v-model="modelIsActive" width="auto" scrollable>
       <v-card prepend-icon="mdi-playlist-music" title="Select Playlist">
         <v-divider class="mt-3"></v-divider>

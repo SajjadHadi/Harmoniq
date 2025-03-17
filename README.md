@@ -1,5 +1,7 @@
 # Harmoniq Music Player with Vue.js 3 and Tauri (v2)
 
+![Harmoniq Cover](src/assets/images/poster-1.jpeg)
+
 ## Overview
 This project is a lightweight and elegant music player application built with modern web and desktop technologies. It combines the versatility of Vue 3 (Composition API), the state management power of Pinia, the robust UI capabilities of Vuetify, and the typing benefits of TypeScript. Vue Router provides seamless navigation, while Tauri enables the app to run as a desktop application.
 
