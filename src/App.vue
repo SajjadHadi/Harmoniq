@@ -11,7 +11,7 @@ import Drawer from "./components/common/Drawer.vue";
     <Drawer/>
 
     <!-- Main content area -->
-    <v-main class="ml-14">
+    <v-main class="pl-14">
       <v-container fluid>
         <AudioPlayer/>
 
