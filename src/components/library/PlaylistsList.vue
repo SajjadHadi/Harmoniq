@@ -2,6 +2,10 @@
 import { usePlaylistStore } from "../../stores/PlaylistStore.ts";
 import ItemList from "../common/ItemList.vue";
 
+defineProps<{
+  limit?: number
+}>();
+
 const store = usePlaylistStore();
 
 const handleDelete = (playlistId: string) => {
@@ -20,7 +24,7 @@ const handleItemClick = (playlistId: string) => {
 
 <template>
   <ItemList
-      :items="store.playlists"
+      :items="limit ? store.playlists.slice(0, 5) : store.playlists"
       item-count-key="tracks"
       item-icon="mdi-playlist-music"
       :on-delete="handleDelete"

@@ -16,8 +16,8 @@ import Drawer from "./components/common/Drawer.vue";
         <!-- Tracks List Section -->
         <v-row>
           <v-col>
-            <h2>Tracks List</h2>
-            <TracksList />
+            <h2>Recent Tracks</h2>
+            <TracksList :limit="5"/>
           </v-col>
         </v-row>
 
@@ -25,7 +25,7 @@ import Drawer from "./components/common/Drawer.vue";
         <v-row>
           <v-col>
             <h2>Playlists</h2>
-            <PlaylistsList />
+            <PlaylistsList :limit="5"/>
           </v-col>
         </v-row>
 

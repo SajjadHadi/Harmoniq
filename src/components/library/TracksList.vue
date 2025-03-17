@@ -2,6 +2,10 @@
 import { useLibraryStore } from "../../stores/LibraryStore.ts";
 import ItemList from "../common/ItemList.vue";
 
+defineProps<{
+  limit?: number
+}>()
+
 const store = useLibraryStore();
 
 const handleDelete = (trackId: string) => {
@@ -15,7 +19,7 @@ const handleItemClick = (trackId: string) => {
 
 <template>
   <ItemList
-      :items="store.tracks"
+      :items="limit ? store.tracks.slice(0, limit) : store.tracks"
       item-count-key="tracks"
       item-icon="mdi-music"
       :on-delete="handleDelete"
