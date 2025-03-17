@@ -20,7 +20,7 @@ export const useLibraryStore = defineStore('library', {
                 title,
                 path,
             };
-            this.tracks.push(track);
+            this.tracks.unshift(track);
             return track;
         },
         async openTrack() {

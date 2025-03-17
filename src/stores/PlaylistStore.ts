@@ -28,7 +28,7 @@ export const usePlaylistStore = defineStore('playlist', {
                 title,
                 tracks: [],
             };
-            this.playlists.push(newPlaylist);
+            this.playlists.unshift(newPlaylist);
             console.log(this.playlists);
         },
         addToPlaylist(playlistId: string, track: Track) {
