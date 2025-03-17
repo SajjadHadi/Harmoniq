@@ -17,14 +17,6 @@ import CreatePlaylist from "../components/library/CreatePlaylist.vue";
         <PlaylistsList :limit="5"/>
       </v-col>
     </v-row>
-
-    <!-- Create Playlist Section -->
-    <v-row>
-      <v-col>
-        <h2 class="mb-2 pl-2">Create a Playlist</h2>
-
-      </v-col>
-    </v-row>
   </v-container>
 </template>
 
