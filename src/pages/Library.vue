@@ -1,15 +1,14 @@
 <script setup lang="ts">
 
-import TracksList from "../components/library/TracksList.vue";
+import LibraryList from "../components/library/LibraryList.vue";
 </script>
 
 <template>
   <v-container>
-    <!-- Recent Tracks Section -->
     <v-row>
       <v-col>
-        <h2 class="mb-2 pl-2">Recent Tracks</h2>
-        <TracksList/>
+        <h2 class="mb-2 pl-2">Tracks Library</h2>
+        <LibraryList/>
       </v-col>
     </v-row>
   </v-container>

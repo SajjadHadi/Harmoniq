@@ -12,6 +12,8 @@ defineProps<{
   itemIcon?: string;
   onDelete: (id: string) => void;
   onEdit?: (id: string) => void;
+  onAdd?: (id: string) => void;
+  isLink?: boolean;
 }>();
 
 const isEditing = ref<boolean>(false);
@@ -62,6 +64,16 @@ const toggleEdit = (itemId: string) => {
               @click="onEdit(item.id)">
             <v-icon>mdi-pencil</v-icon>
             <v-tooltip activator="parent" location="bottom">Edit</v-tooltip>
+          </v-btn>
+
+          <v-btn
+              v-if="onAdd"
+              icon
+              color="accent"
+              variant="text"
+              @click="onAdd(item.id)">
+            <v-icon>mdi-plus</v-icon>
+            <v-tooltip activator="parent" location="bottom">Add to Playlist</v-tooltip>
           </v-btn>
 
           <v-btn

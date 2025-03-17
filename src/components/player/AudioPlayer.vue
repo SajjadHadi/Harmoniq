@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import { useLibraryStore } from '../../stores/LibraryStore';
+import { usePlaybackStore } from "../../stores/PlaybackStore.ts";
 
-const store = useLibraryStore();
+const libraryStore = useLibraryStore();
+const playbackStore = usePlaybackStore();
 
 const audio = ref<HTMLAudioElement | null>(null);
 const isPlaying = ref(false);
@@ -52,7 +54,7 @@ const formatTime = (seconds: number): string => {
 };
 
 watch(
-    () => store.currentTrack,
+    () => playbackStore.currentTrack,
     (newTrack) => {
       if (!audio.value) return;
       // Pause current playback and reset timing
@@ -73,7 +75,7 @@ watch(
 
 <template>
   <v-card elevation="0" width="100%">
-    <v-card-title class="headline mb-4" v-if="store.currentTrack"> {{ store.currentTrack?.title }}</v-card-title>
+    <v-card-title class="headline mb-4" v-if="playbackStore.currentTrack"> {{ playbackStore.currentTrack?.title }}</v-card-title>
     <v-card-text>
       <audio
           ref="audio"
@@ -86,7 +88,7 @@ watch(
 
       <v-row>
         <v-col cols="auto" justify="center">
-          <v-btn class="mr-1" color="primary" @click="store.skipToPreviousTrack()" icon>
+          <v-btn class="mr-1" color="primary" @click="playbackStore.skipToPreviousTrack()" icon>
             <v-icon left>mdi-skip-previous</v-icon>
           </v-btn>
 
@@ -94,11 +96,11 @@ watch(
             <v-icon left>{{ isPlaying ? 'mdi-pause' : 'mdi-play' }}</v-icon>
           </v-btn>
 
-          <v-btn class="mr-1" color="primary" @click="store.skipToNextTrack()" icon>
+          <v-btn class="mr-1" color="primary" @click="playbackStore.skipToNextTrack()" icon>
             <v-icon left>mdi-skip-next</v-icon>
           </v-btn>
 
-          <v-btn color="secondary" @click="store.openTracks()" icon>
+          <v-btn color="secondary" @click="libraryStore.openTracks()" icon>
             <v-icon left>mdi-folder-music</v-icon>
           </v-btn>
         </v-col>

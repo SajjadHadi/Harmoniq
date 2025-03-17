@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import { useRouter } from "vue-router";
 import { usePlaylistStore } from "../../stores/PlaylistStore.ts";
-import ItemList from "../common/ItemList.vue";
+import List from "../common/List.vue";
 import EmptyList from "../common/EmptyList.vue";
 
 defineProps<{
@@ -8,6 +9,7 @@ defineProps<{
 }>();
 
 const store = usePlaylistStore();
+const router = useRouter();
 
 const handleDelete = (playlistId: string) => {
   store.removePlaylist(playlistId);
@@ -19,12 +21,12 @@ const handleEdit = (playlistId: string) => {
 };
 
 const handleItemClick = (playlistId: string) => {
-  console.log('Playlist clicked:', playlistId);
+  router.push(`/playlist/${playlistId}`);
 }
 </script>
 
 <template>
-  <ItemList
+  <List
       v-if="store.playlists.length > 0"
       :items="limit ? store.playlists.slice(0, 5) : store.playlists"
       item-count-key="tracks"
@@ -33,5 +35,5 @@ const handleItemClick = (playlistId: string) => {
       :on-edit="handleEdit"
       @item-click="handleItemClick"
   />
-  <EmptyList v-else message="The playlist library is empty..." />
+  <EmptyList v-else message="The playlist library is empty..."/>
 </template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import TracksList from "../components/library/TracksList.vue";
+import LibraryList from "../components/library/LibraryList.vue";
 import PlaylistsList from "../components/library/PlaylistsList.vue";
 </script>
 
@@ -10,7 +10,7 @@ import PlaylistsList from "../components/library/PlaylistsList.vue";
     <v-row>
       <v-col>
         <h2 class="mb-2 pl-2">Recent Tracks</h2>
-        <TracksList :limit="5"/>
+        <LibraryList :limit="5"/>
       </v-col>
     </v-row>
 

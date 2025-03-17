@@ -31,8 +31,8 @@ const rail = ref(true);
 
     <v-list density="compact" nav>
       <v-list-item prepend-icon="mdi-home" title="Home" to="/" nav/>
-      <v-list-item prepend-icon="mdi-playlist-music" title="Playlists" to="/playlists" nav/>
-      <v-list-item prepend-icon="mdi-music" title="Tracks" to="/tracks" nav/>
+      <v-list-item prepend-icon="mdi-playlist-music" title="Playlist" to="/playlist" nav/>
+      <v-list-item prepend-icon="mdi-music" title="Library" to="/library" nav/>
     </v-list>
 
   </v-navigation-drawer>
