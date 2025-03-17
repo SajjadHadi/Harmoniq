@@ -1,16 +1,74 @@
-# Tauri + Vue + TypeScript
+# Harmoniq Music Player with Vue.js 3 and Tauri (v2)
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Overview
+This project is a lightweight and elegant music player application built with modern web and desktop technologies. It combines the versatility of Vue 3 (Composition API), the state management power of Pinia, the robust UI capabilities of Vuetify, and the typing benefits of TypeScript. Vue Router provides seamless navigation, while Tauri enables the app to run as a desktop application.
 
-## Recommended IDE Setup
+### Key Features
+1. **Multi-file Support**:
+    - Allows users to open multiple audio files simultaneously using an intuitive file dialog.
+    - Supported formats include `.mp3`, `.wav`, and `.ogg`.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+2. **Track Library**:
+    - Displays all imported tracks in an organized library.
+    - Supports browsing and selecting tracks dynamically.
 
-## Type Support For `.vue` Imports in TS
+3. **Playlist Management**:
+    - Users can create, edit, and manage playlists.
+    - Playlists allow custom ordering of tracks for personalized playback.
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+4. **Playback Controls**:
+    - Play, pause, skip to the next track, and return to the previous track functionalities.
+    - Smooth track transitions in the library.
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+5. **Intelligent Duplication Handling**:
+    - Avoids adding duplicate tracks to the library or playlists to maintain a clean and efficient experience.
+    - Tracks are uniquely identified to prevent redundancies.
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+6. **User-Friendly Design**:
+    - Leveraging Vuetify for an intuitive, responsive, and visually appealing user interface.
+    - Consistent styling across all components.
+
+7. **Desktop Integration**:
+    - Utilizes Tauri for packaging and running the app as a desktop application.
+    - Provides native-like performance with a lightweight footprint.
+
+## Technologies Used
+- **Vue 3 (Composition API)**: For building modular and reusable components.
+- **Pinia**: State management to synchronize playback state, library, and playlists.
+- **Vuetify**: For a material design-inspired, responsive UI.
+- **TypeScript**: Ensures type safety and helps maintain clean, readable code.
+- **Vue Router**: Facilitates seamless navigation between library, playlists, and playback views.
+- **Tauri**: Powers the app as a lightweight desktop application.
+
+## Functionality Breakdown
+1. **File Handling**:
+    - Users can load multiple tracks at once.
+    - Tracks are processed, metadata is extracted, and displayed in the library.
+
+2. **Playback Navigation**:
+    - Skip to the next or previous track in the library with circular navigation support (i.e., wraps around to the first track if the current track is the last, and vice versa).
+    - Real-time playback controls with play and pause functionality.
+
+3. **Playlist Creation**:
+    - Add tracks from the library to custom playlists.
+    - Playlists allow easy management and reordering of tracks.
+
+4. **Dynamic Library Updates**:
+    - Automatically updates the library when new tracks are added, ensuring no duplicates are introduced.
+
+## Advantages
+- **Optimized Performance**: Uses efficient algorithms and avoids unnecessary re-renders to ensure smooth performance.
+- **Scalability**: Built with modular components, making the application easy to scale and maintain.
+- **Cross-Platform**: Thanks to Tauri, the app can run on multiple desktop environments like Windows, macOS, and Linux.
+
+## Usage
+1. Open the app and import your audio files into the library.
+2. Use the playback controls to play, pause, or navigate through tracks.
+3. Create and manage playlists from your imported tracks.
+4. Enjoy uninterrupted music playback with a clean and user-friendly interface.
+
+## Future Improvements
+- Enhance metadata extraction for richer track information.
+- Implement audio visualization during playback.
+- Introduce theme customization options.
+- Add support for drag-and-drop file importing.
