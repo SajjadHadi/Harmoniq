@@ -48,6 +48,23 @@ export const useLibraryStore = defineStore('library', {
         },
         setCurrentTrack(id: string) {
             this.currentTrack = this.tracks.find((track: Track) => track.id === id) || null;
+        },
+        skipToNextTrack() {
+            const currentIndex = this.tracks.findIndex(track => track.id === this.currentTrack?.id);
+
+            if (currentIndex !== -1) {
+                const nextIndex = (currentIndex + 1) % this.tracks.length;
+                this.currentTrack = this.tracks[nextIndex];
+            }
+        },
+        skipToPreviousTrack() {
+            const currentIndex = this.tracks.findIndex(track => track.id === this.currentTrack?.id);
+
+            if (currentIndex !== -1) {
+                const prevIndex = (currentIndex - 1 + this.tracks.length) % this.tracks.length;
+                this.currentTrack = this.tracks[prevIndex];
+            }
         }
+
     },
 });
