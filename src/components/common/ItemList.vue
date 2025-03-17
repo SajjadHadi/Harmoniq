@@ -29,7 +29,7 @@ const toggleEdit = (itemId: string) => {
 </script>
 
 <template>
-  <v-list>
+  <v-list class="rounded-xl">
     <v-list-item
         @click="$emit('item-click', item.id)"
         v-for="item in items"
