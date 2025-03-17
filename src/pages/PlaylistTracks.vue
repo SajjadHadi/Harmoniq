@@ -6,6 +6,7 @@ import { usePlaybackStore } from "../stores/PlaybackStore.ts";
 import List from "../components/common/List.vue";
 import { Playlist } from "../types/playlist";
 import { Track } from "../types/track";
+import EmptyList from "../components/common/EmptyList.vue";
 
 const route = useRoute();
 const router = useRouter();
@@ -37,7 +38,7 @@ const handleItemClick = (trackId: string) => {
 <template>
   <v-sheet v-if="playlist" class="pa-4 bg-transparent">
     <v-sheet class="d-flex align-center mb-4 bg-transparent">
-      <v-btn icon="mdi-keyboard-backspace"  @click="router.back()"/>
+      <v-btn icon="mdi-keyboard-backspace" @click="router.back()"/>
       <h2 class="ml-4">{{ playlist.title }}</h2>
     </v-sheet>
 
