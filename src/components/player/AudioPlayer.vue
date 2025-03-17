@@ -98,7 +98,7 @@ watch(
             <v-icon left>mdi-skip-next</v-icon>
           </v-btn>
 
-          <v-btn color="secondary" @click="store.openTrack()" icon>
+          <v-btn color="secondary" @click="store.openTracks()" icon>
             <v-icon left>mdi-folder-music</v-icon>
           </v-btn>
         </v-col>

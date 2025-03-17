@@ -23,21 +23,27 @@ export const useLibraryStore = defineStore('library', {
             this.tracks.unshift(track);
             return track;
         },
-        async openTrack() {
+        async openTracks() {
             try {
-                const file = await open({
-                    multiple: false,
+                const files = await open({
+                    multiple: true,
                     directory: false,
                     filters: [{ name: 'Audio', extensions: ['mp3', 'wav', 'ogg'] }],
                 });
-                if (file) {
-                    const audioPath = convertFileSrc(file as string);
-                    const fileName = await basename(file as string);
-                    const title = fileName.split('.').shift() || 'Unknown Title';
-                    this.currentTrack = this.createTrack(audioPath, title);
+
+                if (files) {
+                    const fileArray = Array.isArray(files) ? files : [files];
+                    await Promise.all(
+                        fileArray.map(async (file) => {
+                            const audioPath = convertFileSrc(file as string);
+                            const fileName = await basename(file as string);
+                            const title = fileName.split('.').shift() || 'Unknown Title';
+                            return this.createTrack(audioPath, title);
+                        })
+                    );
                 }
             } catch (error) {
-                console.error('Error opening track:', error);
+                console.error('Error opening tracks:', error);
             }
         },
         removeTrack(id: string) {
