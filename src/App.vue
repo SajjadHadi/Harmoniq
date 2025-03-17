@@ -8,18 +8,16 @@ import Drawer from "./components/common/Drawer.vue";
 
 <template>
   <v-app>
-    <Drawer/>
+    <Drawer />
 
-    <!-- Main content area -->
-    <v-main class="pl-14">
-      <v-container fluid>
-        <AudioPlayer/>
-
+    <!-- Main Content Area -->
+    <v-main class="pl-14" style="padding-bottom: 150px;">
+      <v-container>
         <!-- Tracks List Section -->
         <v-row>
           <v-col>
             <h2>Tracks List</h2>
-            <TracksList/>
+            <TracksList />
           </v-col>
         </v-row>
 
@@ -27,18 +25,24 @@ import Drawer from "./components/common/Drawer.vue";
         <v-row>
           <v-col>
             <h2>Playlists</h2>
-            <PlaylistsList/>
+            <PlaylistsList />
           </v-col>
         </v-row>
 
+        <!-- Create Playlist Section -->
         <v-row>
           <v-col>
             <h2>Create a Playlist</h2>
-            <PlaylistForm/>
+            <PlaylistForm />
           </v-col>
         </v-row>
       </v-container>
     </v-main>
+
+    <!-- Footer -->
+    <v-footer class="pl-16 position-fixed bottom-0 left-0 right-0">
+      <AudioPlayer />
+    </v-footer>
   </v-app>
 </template>
 

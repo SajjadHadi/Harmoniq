@@ -51,7 +51,7 @@ const toggleEdit = (itemId: string) => {
               variant="text"
               @click="onDelete(item.id)">
             <v-icon>mdi-delete</v-icon>
-            <v-tooltip activator="parent" location="bottom">Delete</v-tooltip>
+            <v-tooltip activator="parent" location="bottom">Remove</v-tooltip>
           </v-btn>
 
           <v-btn
