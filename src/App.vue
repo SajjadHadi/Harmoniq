@@ -4,7 +4,6 @@ import PlaylistsList from "./components/library/PlaylistsList.vue";
 import AudioPlayer from "./components/player/AudioPlayer.vue";
 import TracksList from "./components/library/TracksList.vue";
 import Drawer from "./components/common/Drawer.vue";
-
 </script>
 
 <template>
@@ -45,9 +44,7 @@ import Drawer from "./components/common/Drawer.vue";
 
 <style scoped>
 html,
-body,
-#app,
-.v-application {
+body {
   height: 100%;
   margin: 0;
   padding: 0;
