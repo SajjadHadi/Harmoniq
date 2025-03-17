@@ -61,7 +61,7 @@ const toggleEdit = (itemId: string) => {
               icon
               color="warning"
               variant="text"
-              @click="onEdit(item.id)">
+              @click.stop="onEdit(item.id)">
             <v-icon>mdi-pencil</v-icon>
             <v-tooltip activator="parent" location="bottom">Edit</v-tooltip>
           </v-btn>
@@ -71,7 +71,7 @@ const toggleEdit = (itemId: string) => {
               icon
               color="accent"
               variant="text"
-              @click="onAdd(item.id)">
+              @click.stop="onAdd(item.id)">
             <v-icon>mdi-plus</v-icon>
             <v-tooltip activator="parent" location="bottom">Add to Playlist</v-tooltip>
           </v-btn>
@@ -80,7 +80,7 @@ const toggleEdit = (itemId: string) => {
               icon
               color="grey"
               variant="text"
-              @click="toggleEdit(item.id)">
+              @click.stop="toggleEdit(item.id)">
             <v-icon>mdi-close</v-icon>
             <v-tooltip activator="parent" location="bottom">Close</v-tooltip>
           </v-btn>
@@ -91,7 +91,7 @@ const toggleEdit = (itemId: string) => {
             icon
             color="grey"
             variant="text"
-            @click="toggleEdit(item.id)">
+            @click.stop="toggleEdit(item.id)">
           <v-icon>mdi-dots-horizontal</v-icon>
           <v-tooltip activator="parent" location="bottom">More Options</v-tooltip>
         </v-btn>

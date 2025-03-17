@@ -24,7 +24,7 @@ const selectedPlaylist = ref('');
 <template>
   <div class="pa-4 text-center">
     <v-dialog v-model="modelIsActive" width="auto" scrollable>
-      <v-card prepend-icon="mdi-earth" title="Select Playlist(s)">
+      <v-card prepend-icon="mdi-playlist-music" title="Select Playlist">
         <v-divider class="mt-3"></v-divider>
 
         <v-card-text class="px-4" style="height: 300px;">
@@ -47,7 +47,7 @@ const selectedPlaylist = ref('');
           <v-btn text @click="emit('close')">Close</v-btn>
           <v-spacer></v-spacer>
           <v-btn
-              color="surface-variant"
+              color="secondary"
               text
               variant="flat"
               @click="emit('save', selectedPlaylist)"

@@ -12,6 +12,8 @@ const rail = ref(true);
       :rail="rail"
       permanent
       @click="rail = false"
+      @mouseleave="rail = true"
+      @mouseenter="rail = false"
   >
     <v-list-item
         prepend-icon="mdi-music-clef-treble"

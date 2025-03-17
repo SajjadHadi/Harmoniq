@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import PlaylistsList from "../components/library/PlaylistsList.vue";
-import PlaylistForm from "../components/library/PlaylistForm.vue";
+import CreatePlaylist from "../components/library/CreatePlaylist.vue";
 </script>
 
 <template>
@@ -10,7 +10,10 @@ import PlaylistForm from "../components/library/PlaylistForm.vue";
     <!-- Playlists Section -->
     <v-row>
       <v-col>
-        <h2 class="mb-2 pl-2">Playlists</h2>
+        <v-row class="d-flex align-center justify-space-between pa-2">
+          <h2 class="mb-2 pl-2">Playlists</h2>
+          <CreatePlaylist/>
+        </v-row>
         <PlaylistsList :limit="5"/>
       </v-col>
     </v-row>
@@ -19,7 +22,7 @@ import PlaylistForm from "../components/library/PlaylistForm.vue";
     <v-row>
       <v-col>
         <h2 class="mb-2 pl-2">Create a Playlist</h2>
-        <PlaylistForm/>
+
       </v-col>
     </v-row>
   </v-container>
