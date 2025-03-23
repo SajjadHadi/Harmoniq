@@ -6,7 +6,6 @@ import PlaylistsList from "../components/library/PlaylistsList.vue";
 
 <template>
   <v-container>
-    <!-- Recent Tracks Section -->
     <v-row>
       <v-col>
         <h2 class="mb-2 pl-2">Recent Tracks</h2>
@@ -14,7 +13,6 @@ import PlaylistsList from "../components/library/PlaylistsList.vue";
       </v-col>
     </v-row>
 
-    <!-- Recent Playlists Section -->
     <v-row>
       <v-col>
         <h2 class="mb-2 pl-2">Recent Playlists</h2>
